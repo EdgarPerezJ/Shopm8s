@@ -28,7 +28,8 @@
                 <h2></h2>
             </div>           
             <div class="full_width clear">
-                <div class="one_half first">
+            <div class="full_width clear">
+                <div class="one_third first">
                     <div style="display: inline-block; width: 30px;">
                         <img src="../styles/images/avatar83.png" style="width: 20px; height: 20px; display: inline-block" />
                     </div>
@@ -42,7 +43,12 @@
                         <img src="../styles/images/cart10.png" style="width: 20px; height: 20px; display: inline-block"/>     
                     </div> 
                 </div>
-                <div class="one_half"></div>
+                <div class="one_third">&nbsp;</div>
+                <div class="one_third">                    
+                     <input type="text" style="width: 60%" />
+                     <input type="button" value="Search" />
+                </div>
+                
             </div>
         </header>
     </div>
