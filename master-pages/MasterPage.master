@@ -30,22 +30,25 @@
             <div class="full_width clear">
                 <div class="one_third first">
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../Shopm8s/styles/images/avatar83.png" style="width: 20px; height: 20px; display: inline-block" />
+                        <img src="../Shopm8s/styles/images/avatar83.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;" />
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../Shopm8s/styles/images/email128.png" style="width: 20px; height: 20px; display: inline-block"/>
+                        <img src="../Shopm8s/styles/images/email128.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../Shopm8s/styles/images/earth213.png" style="width: 20px; height: 20px; display: inline-block"/>   
+                        <img src="../Shopm8s/styles/images/earth213.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>   
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../Shopm8s/styles/images/cart10.png" style="width: 20px; height: 20px; display: inline-block"/>     
-                    </div> 
+                        <img src="../Shopm8s/styles/images/cart10.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>     
+                    </div>                     
                 </div>
                 <div class="one_third">&nbsp;</div>
                 <div class="one_third">                    
-                     <input type="text" style="width: 60%" />
+                     <input type="text" style="width: 50%" />
                      <input type="button" value="Search" />
+                     <div style="display: inline-block; ">
+                        <a href="/Shopm8s/Login.aspx">Login</a>/<a href="/Shopm8s/Signup.aspx">Register</a>
+                     </div>
                 </div>                
             </div>
         </header>
@@ -53,45 +56,15 @@
 
     <div class="wrapper row2">
         <nav id="topnav">
-        <ul class="clear">
-            <li class="active first"><a href="index.html">Homepage</a></li>
-            <li><a class="drop" href="#">Drop 1</a>
-            <ul>
-                <li><a href="#">Level 2</a></li>
-                <li><a href="#">Level 2</a></li>
-                <li><a class="drop" href="#">Level 2 + Drop</a>
-                <ul>
-                    <li><a href="#">Level 3</a></li>
-                    <li><a class="drop" href="#">Level 3 + Drop</a>
-                    <ul>
-                        <li><a href="#">Level 4</a></li>
-                        <li><a href="#">Level 4</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#">Level 3</a></li>
-                </ul>
-                </li>
+            <ul class="clear">
+                <li class="active first"><a href="index.html">Home</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Baby & Kids</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Electronics</a></li>
+                <li><a href="/Shopm8s/Login.aspx">Sell</a></li>
             </ul>
-            </li>
-            <li><a href="#">Style Demo</a></li>
-            <li><a href="#">Full Width</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">A Long Link Text Here</a></li>
-            <li class="last-child"><a class="drop" href="#">Drop 2</a>
-            <ul>
-                <li><a href="#">Level 2</a></li>
-                <li><a href="#">Level 2</a></li>
-                <li><a class="drop" href="#">Level 2 + Drop</a>
-                <ul class="negative">
-                    <li><a href="#">Level 3</a></li>
-                    <li><a href="#">Level 3</a></li>
-                    <li><a href="#">Level 3</a></li>
-                </ul>
-                </li>
-            </ul>
-            </li>
-        </ul>
         </nav>
     </div>
     
