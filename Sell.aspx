@@ -11,6 +11,12 @@
       <div class="one_half"><asp:TextBox ID="producttxt" runat="server"></asp:TextBox>
           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="producttxt" ErrorMessage="Please supply your product name" style="display:none"></asp:RequiredFieldValidator>
           
+            
+          
+            
+          
+            
+          
             </div>
       <div class="one_half first"><p>Price:</p></div>
       <div class="one_half">
@@ -21,8 +27,14 @@
             
             </div>
       <div class="one_half first"><p>Type:</p></div>
-      <div class="one_half"><asp:TextBox ID="typetxt" runat="server" ></asp:TextBox>
-          <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="typetxt" ErrorMessage="Please supply product type" style="display:none" ></asp:RequiredFieldValidator>
+      <div class="one_half">
+          <asp:DropDownList ID="typedbl" runat="server">
+              <asp:ListItem Value="Women">Women</asp:ListItem>
+              <asp:ListItem>Men</asp:ListItem>
+              <asp:ListItem>Baby &amp; Kids</asp:ListItem>
+              <asp:ListItem>Home</asp:ListItem>
+              <asp:ListItem>Electronics</asp:ListItem>
+          </asp:DropDownList>          
          
             </div>
             <div class="one_half first"><p>Description:</p></div>
@@ -45,7 +57,7 @@
             <asp:FileUpload ID="productload4" runat="server" /></div>
             <div class="one_half first"><p><br /></p></div>
          <div class="one_half">
-             <asp:Button ID="btnsave" runat="server" Text="Save" />
+             <asp:Button ID="btnsave" runat="server" Text="Save" OnClick="btnsave_Click" />
     </div>
             <div class="one_half first">
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" style="color:red"/>

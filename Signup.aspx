@@ -32,10 +32,15 @@
         <div id="container">
         <div class="full_width clear">
       <h2>Sign up Below:</h2>
+      <div class="one_half first"><p>Name:</p></div>
+      <div class="one_half"><asp:TextBox ID="nametxt" runat="server" ></asp:TextBox>
+          <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="NAMEtxt" ErrorMessage="Please supply your name" style="display:none"></asp:RequiredFieldValidator>
+            
+            </div>
       <div class="one_half first"><p>E-Mail:</p></div>
       <div class="one_half"><asp:TextBox ID="emailtxt" runat="server" TextMode="Email"></asp:TextBox>
           <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="emailtxt" ErrorMessage="Please supply your Email" style="display:none"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailtxt" ErrorMessage="Email is in wrong format" style="display:none"></asp:RegularExpressionValidator>
+           
             </div>
       <div class="one_half first"><p>Password:</p></div>
       <div class="one_half">
@@ -55,7 +60,7 @@
           <asp:FileUpload ID="picupload" runat="server" /></div>
             <div class="one_half first"><p></p></div>
          <div class="one_half">
-             <asp:Button ID="btnsave" runat="server" Text="Save" />
+             <asp:Button ID="btnsave" runat="server" Text="Save" OnClick="btnsave_Click" />
         </div>
         <div class="one_half first">
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" style="color:red"/>

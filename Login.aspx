@@ -36,25 +36,17 @@
                 <div class="one_half first"><p>E-Mail:</p></div>
                     <div class="one_half"><asp:TextBox ID="emailtxt" runat="server" TextMode="Email"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Text="<img src='./styles/images/Exclamation.gif' title='Please supply your Email' />" runat="server" ControlToValidate="emailtxt" ErrorMessage="Please supply your Email"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="emailtxt" ErrorMessage="Email is in wrong format" style="display:none"></asp:RegularExpressionValidator>
+                      
                     </div>
                     <div class="one_half first"><p>Password:</p></div>
                     <div class="one_half">
                         <asp:TextBox ID="passwordtxt" runat="server" TextMode="Password"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passwordtxt" Text="<img src='./styles/images/Exclamation.gif' title='Please supply your Password' />" ErrorMessage="Please supply your password"></asp:RequiredFieldValidator>
                     </div>
-                    <div class="one_half first"><p>Repeat Password:</p></div>
-                    <div class="one_half"><asp:TextBox ID="repasswordtxt" runat="server" TextMode="Password"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="repasswordtxt" Text="<img src='./styles/images/Exclamation.gif' title='Please repeat your Password' />" ErrorMessage="Please Repeat your password"></asp:RequiredFieldValidator>
-                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="passwordtxt" ControlToValidate="repasswordtxt" ErrorMessage="Passwords dont match" style="display:none"></asp:CompareValidator>
-                    </div>
-                    <div class="one_half first"><p>Profile Picture:</p></div>
-                    <div class="one_half">
-                        <asp:FileUpload ID="picupload" runat="server" />
-                    </div>
+                    
                     <div class="one_half first"><p></p></div>
                      <div class="one_half">
-                        <asp:Button ID="btnsave" runat="server" Text="Save" />
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
                     </div>
                     <div class="one_half first">
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="validationsummary"
