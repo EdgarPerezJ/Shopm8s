@@ -56,13 +56,13 @@
             <div class="one_half first"><p></p></div>
          <div class="one_half">
              <asp:Button ID="btnsave" runat="server" Text="Save" />
-    </div>
-            <div class="one_half first">
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" style="color:red"/>
-            </div>
-            </div>
         </div>
-            </div>
+        <div class="one_half first">
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" style="color:red"/>
+        </div>
+        </div>
+        </div>
+        </div>
         <div class="wrapper row4">
   <footer id="footer" class="clear">
     <p class="fl_left">Copyright &copy; 2013 - All Rights Reserved - <a href="#">Domain Name</a></p>

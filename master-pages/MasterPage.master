@@ -4,10 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Shopm8s</title>
-    <meta charset="iso-8859-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/layout.css" type="text/css" media="all">
-    <link rel="stylesheet" href="../styles/mediaqueries.css" type="text/css" media="all">
+    <meta charset="iso-8859-1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../styles/layout.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="../styles/mediaqueries.css" type="text/css" media="all"/>
     <script src="../scripts/jquery.1.9.0.min.js"></script>
     <script src="../scripts/jquery-mobilemenu.min.js"></script>
     <!--[if lt IE 9]>
@@ -30,16 +30,16 @@
             <div class="full_width clear">
                 <div class="one_third first">
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../Shopm8s/styles/images/avatar83.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;" />
+                        <img src="../styles/images/avatar83.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;" />
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../Shopm8s/styles/images/email128.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>
+                        <img src="../styles/images/email128.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../Shopm8s/styles/images/earth213.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>   
+                        <img src="../styles/images/earth213.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>   
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../Shopm8s/styles/images/cart10.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>     
+                        <img src="../styles/images/cart10.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>     
                     </div>                     
                 </div>
                 <div class="one_third">&nbsp;</div>
@@ -47,7 +47,7 @@
                      <input type="text" style="width: 50%" />
                      <input type="button" value="Search" />
                      <div style="display: inline-block; ">
-                        <a href="/Shopm8s/Login.aspx">Login</a>/<a href="/Shopm8s/Signup.aspx">Register</a>
+                        <a href="/Login.aspx">Login</a>/<a href="/Signup.aspx">Register</a>
                      </div>
                 </div>                
             </div>
@@ -63,7 +63,7 @@
                 <li><a href="#">Baby & Kids</a></li>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Electronics</a></li>
-                <li><a href="/Shopm8s/Login.aspx">Sell</a></li>
+                <li><a href="/Login.aspx">Sell</a></li>
             </ul>
         </nav>
     </div>
