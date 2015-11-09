@@ -24,7 +24,6 @@ public partial class Login : System.Web.UI.Page
             Session["UserInfo"] = ClientUserInfo;
             Session["id"] = ClientUserInfo.Rows[0]["id"];
             Session["name"] = ClientUserInfo.Rows[0]["name"];
-            Session["password"] = ClientUserInfo.Rows[0]["Password"];
             Session["ProfilePicture"] = ClientUserInfo.Rows[0]["ProfilePicture"];
             Session["email"] = ClientUserInfo.Rows[0]["email"];
             Response.Redirect("Default.aspx");

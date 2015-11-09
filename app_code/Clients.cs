@@ -139,4 +139,110 @@ public class Clients: ConnectionString
         }
         return ClientInfoDt;
     }
+
+
+    public DataTable RetrieveProfileInfo()
+    {
+        DataTable ProfileInfoDt = new DataTable();
+        SqlConnection conn = new SqlConnection(Connstr);
+        try
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SP_RetrieveProfileInfo");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
+            cmd.Parameters.AddWithValue("@Fld_ClientId", _id);       
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            adp.Fill(ProfileInfoDt);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+
+        }
+        return ProfileInfoDt;
+    }
+
+
+    public void EditClient()
+    {
+        SqlConnection conn = new SqlConnection(Connstr);
+        conn.Open();
+        try
+        {
+            SqlCommand cmd = new SqlCommand("SP_EditClient");
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Fld_ClientID ", _id);
+            cmd.Parameters.AddWithValue("@Fld_UserName", _name);
+            cmd.Parameters.AddWithValue("@Fld_Email", _email);           
+            cmd.Parameters.AddWithValue("@Fld_profilepic", _ProfilePicture);
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        finally
+        {
+            conn.Close();
+            conn.Dispose();
+        }
+    }
+
+
+    public void EditPassword()
+    {
+        SqlConnection conn = new SqlConnection(Connstr);
+        conn.Open();
+        try
+        {
+            SqlCommand cmd = new SqlCommand("SP_EditPassword");
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Fld_ClientID ", _id);
+            cmd.Parameters.AddWithValue("@Fld_UserPassword", _password);
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        finally
+        {
+            conn.Close();
+            conn.Dispose();
+        }
+    }
+
+    public DataTable RetrievePassword()
+    {
+        DataTable passwordDt = new DataTable();
+        SqlConnection conn = new SqlConnection(Connstr);
+        try
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SP_RetrievePassword");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
+            cmd.Parameters.AddWithValue("@Fld_ClientId", _id);           
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            adp.Fill(passwordDt);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+
+        }
+        return passwordDt;
+    }
 }
