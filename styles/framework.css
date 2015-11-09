@@ -108,7 +108,7 @@ If you add all of the above sizes together you get => 100%
 
 .first{margin-left:0; clear:left;}
 
-.full_width{display:block; width:100%; clear:both;}
+.full_width{display:block; width:100%; clear:both; margin-top:10px; vertical-align: middle;}
 
 /*----------------------------------------------Half Grid-------------------------------------*/
 

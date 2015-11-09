@@ -47,9 +47,8 @@ address, article, aside, figcaption, figure, footer, header, nav, section{displa
 div.wrapper{display:block; width:100%; margin:0; padding:0; text-align:left;}
 
 .row1, .row1 a{color:#C0BAB6; background-color: #ce2020;}
-.row2{color:#919191; background-color:#232323;}
-.row3{color:#979797; background-color:#FFFFFF;height:750px}
-.row3 a{color:#FF9900; background-color:#FFFFFF;}
+.row2{color:#919191; background-color:#232323; }
+.row3{color:#979797; background-color:#FFFFFF; }
 .row4, .row4 a{color:#919191; background-color:#232323;}
 
 /*----------------------------------------------Generalise-------------------------------------*/
@@ -75,9 +74,9 @@ blockquote:after, q:after{content:' „'; font-size:26px; line-height:0;}
 
 /*----------------------------------------------Content Area-------------------------------------*/
 
-#container{padding:30px 0; clear:both;}
+#container{padding:30px 0; clear:both; height: 420px}
 
 /*----------------------------------------------Footer-------------------------------------*/
 
-#footer{padding:20px 0;}
+#footer{padding: 30px 0;}
 #footer p{margin:0; padding:0;}

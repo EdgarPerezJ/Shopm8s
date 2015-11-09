@@ -5,10 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-     <meta charset="iso-8859-1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/layout.css" type="text/css" media="all">
-    <link rel="stylesheet" href="./styles/mediaqueries.css" type="text/css" media="all">
+    <meta charset="iso-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/layout.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="./styles/mediaqueries.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/styles/alerts.css" type="text/css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" />
     <script src="../scripts/jquery.1.9.0.min.js"></script>
     <script src="../scripts/jquery-mobilemenu.min.js"></script>
     <!--[if lt IE 9]>
@@ -24,7 +26,7 @@
         <header id="header" class="clear">
             <div id="hgroup">
                 <h1><a href="#">SHOPM8S</a></h1>
-                <h2>Statement here</h2>
+                <h2>&nbsp;</h2>
             </div>
         </header>
     </div>
@@ -34,18 +36,18 @@
       <h2>Sign up Below:</h2>
       <div class="one_half first"><p>Name:</p></div>
       <div class="one_half"><asp:TextBox ID="nametxt" runat="server" ></asp:TextBox>
-          <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="NAMEtxt" ErrorMessage="Please supply your name" style="display:none"></asp:RequiredFieldValidator>
+          
             
             </div>
       <div class="one_half first"><p>E-Mail:</p></div>
       <div class="one_half"><asp:TextBox ID="emailtxt" runat="server" TextMode="Email"></asp:TextBox>
-          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="emailtxt" ErrorMessage="Please supply your Email" style="display:none"></asp:RequiredFieldValidator>
+          
            
             </div>
       <div class="one_half first"><p>Password:</p></div>
       <div class="one_half">
           <asp:TextBox ID="passwordtxt" runat="server" TextMode="Password"></asp:TextBox>
-          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passwordtxt" ErrorMessage="Please supply your password" style="display:none"></asp:RequiredFieldValidator>
+          
             
             
             
@@ -53,7 +55,7 @@
       <div class="one_half first"><p>Repeat Password:</p></div>
       <div class="one_half"><asp:TextBox ID="repasswordtxt" runat="server" TextMode="Password"></asp:TextBox>
           <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="repasswordtxt" ErrorMessage="Please Repeat your password" style="display:none" ></asp:RequiredFieldValidator>
-          <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="passwordtxt" ControlToValidate="repasswordtxt" ErrorMessage="Passwords dont match" style="display:none"></asp:CompareValidator>
+          
             </div>
       <div class="one_half first"><p>Profile Picture:</p></div>
       <div class="one_half">
