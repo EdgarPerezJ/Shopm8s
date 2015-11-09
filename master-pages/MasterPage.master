@@ -32,16 +32,24 @@
             <div class="full_width clear">
                 <div class="one_third first">
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../styles/images/avatar83.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;" />
+                        <asp:LinkButton id="profileIcon" runat="server" OnClick="profileIcon_Click">
+                            <img src="../styles/images/avatar83.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;" />
+                        </asp:LinkButton>
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../styles/images/email128.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>
+                        <asp:LinkButton ID="messagesIcon" runat="server" OnClick="messagesIcon_Click">
+                            <img src="../styles/images/email128.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>
+                        </asp:LinkButton>
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../styles/images/earth213.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>   
+                        <asp:LinkButton id="notifIcon" runat="server" OnClick="notifIcon_Click">
+                            <img src="../styles/images/earth213.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>   
+                        </asp:LinkButton>
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <img src="../styles/images/cart10.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>     
+                        <asp:LinkButton id="cartIcon" runat="server" OnClick="cartIcon_Click">
+                            <img src="../styles/images/cart10.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>     
+                        </asp:LinkButton>
                     </div>                     
                 </div>
                 <div class="one_third">&nbsp;</div>
@@ -49,7 +57,7 @@
                      <input type="text" style="width: 50%" />
                      <input type="button" value="Search" />
                      <div runat="server" id="loginlinks" style="display: inline-block; ">
-                        <a href="/Login.aspx">Login</a>/<a href="/Signup.aspx">Register</a>
+                        <asp:LinkButton runat="server" href="/Login.aspx">Login</asp:LinkButton>/<asp:LinkButton runat="server" href="/Signup.aspx">Register</asp:LinkButton>
                          
                      </div>
                     <div runat="server" id="logoutdiv" style="display: inline-block;">
@@ -57,7 +65,6 @@
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:LinkButton ID="logoutlnk" runat="server" OnClick="logoutlnk_Click">Logout</asp:LinkButton>
-
                         </ContentTemplate>
 
                     </asp:UpdatePanel>

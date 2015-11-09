@@ -18,7 +18,6 @@ public partial class master_pages_MasterPage : System.Web.UI.MasterPage
             }
             else
             {
-
                 loginlinks.Visible = true;
                 logoutdiv.Visible = false;
             }
@@ -30,8 +29,57 @@ public partial class master_pages_MasterPage : System.Web.UI.MasterPage
             Session["UserInfo"] = null;
             Session["name"] = null;
             Session["Password"] = null;
-
             Response.Redirect("Default.aspx");
         }
+    }
+
+    protected void messagesIcon_Click(object sender, EventArgs e)
+    {
+        if (Session["name"] != null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        }   
+    }
+
+
+    protected void profileIcon_Click(object sender, EventArgs e)
+    {
+        if (Session["name"] != null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        } 
+    }
+
+
+    protected void notifIcon_Click(object sender, EventArgs e)
+    {
+        if (Session["name"] != null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        } 
+    }
+
+    protected void cartIcon_Click(object sender, EventArgs e)
+    {
+        if (Session["name"] != null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+        else
+        {
+            Response.Redirect("Login.aspx");
+        } 
     }
 }

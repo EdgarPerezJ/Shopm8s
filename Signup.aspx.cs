@@ -28,5 +28,13 @@ public partial class Signup : System.Web.UI.Page
         clientobj._ProfilePicture = virtualFolder + fileName + extension;
         clientobj.SaveClient();
 
+        //Creates the session and redirect the user to the Main page.
+        Session["UserInfo"] = clientobj;
+        Session["id"] = clientobj._id;
+        Session["name"] = clientobj._name;
+        Session["password"] = clientobj._password;
+        Session["ProfilePicture"] = clientobj._ProfilePicture;
+        Session["email"] = clientobj._email;
+        Response.Redirect("/");
     }
 }
