@@ -9,6 +9,7 @@
               <div class="full_width clear">
              
              <div class="one_half first"> 
+                 <h1>Update Profile:</h1>
                  <div class="full_width clear">
              
                  <div class="one_half first">
@@ -38,10 +39,12 @@
              
                  <div class="one_half first">&nbsp;</div>
                  <div class="one_half">
-                     <asp:Button ID="btnupdate" runat="server" Text="Update" OnClick="btnupdate_Click" /></div>
+                     <asp:Button ID="btnupdate" runat="server" Text="Update" OnClick="btnupdate_Click" />
+                     <asp:Button ID="btndelete" runat="server" Text="Delete Account" OnClick="btndelete_Click" />
+                 </div>
              </div>
              </div>
-             <div class="one_half"> 
+             <div class="one_half"> <h1>Change Password:</h1>
                  <div class="full_width clear">
              
              <div class="one_half first">Old Password:</div>

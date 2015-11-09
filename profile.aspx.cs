@@ -77,4 +77,15 @@ public partial class profile : System.Web.UI.Page
         }
         
     }
+    protected void btndelete_Click(object sender, EventArgs e)
+    {
+        Clients client = new Clients();
+        client._id = new Guid(Session["id"].ToString());
+        client.DeleteClient();
+
+        Session["UserInfo"] = null;
+        Session["name"] = null;
+        Session["Password"] = null;
+        Response.Redirect("Default.aspx");
+    }
 }

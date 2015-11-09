@@ -50,7 +50,7 @@ public partial class master_pages_MasterPage : System.Web.UI.MasterPage
     {
         if (Session["name"] != null)
         {
-            Response.Redirect("Default.aspx");
+            Response.Redirect("profile.aspx");
         }
         else
         {

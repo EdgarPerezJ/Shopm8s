@@ -245,4 +245,28 @@ public class Clients: ConnectionString
         }
         return passwordDt;
     }
+
+    public void DeleteClient()
+    {
+        SqlConnection conn = new SqlConnection(Connstr);
+        conn.Open();
+        try
+        {
+            SqlCommand cmd = new SqlCommand("SP_DeleteClients");
+            cmd.Connection = conn;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Fld_ClientID", _id);
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+        finally
+        {
+            conn.Close();
+            conn.Dispose();
+        }
+    }
 }
