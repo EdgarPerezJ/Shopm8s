@@ -11,7 +11,6 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 html{overflow-y:scroll;}
 
-body{margin:0; padding:0; font-size:100%; font-family:Georgia, "Times New Roman", Times, serif; color:#919191; background-color:#232323;}
 
 .justify{text-align:justify;}
 .bold{font-weight:bold;}
@@ -74,7 +73,7 @@ blockquote:after, q:after{content:' „'; font-size:26px; line-height:0;}
 
 /*----------------------------------------------Content Area-------------------------------------*/
 
-#container{padding:30px 0; clear:both;}
+#container{padding:30px 0; clear:both;  min-height: 451px}
 
 /*----------------------------------------------Footer-------------------------------------*/
 

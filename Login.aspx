@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="/styles/mediaqueries.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="/styles/alerts.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css" media="all"/>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" />
-    <script src="/scripts/jquery.1.9.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="/scripts/jquery-mobilemenu.min.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <!--[if lt IE 9]>
@@ -33,7 +32,7 @@
             </header>
         </div>
         <div class="wrapper row3">
-            <div id="container">
+            <div id="container" style="height: 518px;">
                 <div class="full_width clear">
                     <div class="two_quarter first">
                         <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" role="alert"

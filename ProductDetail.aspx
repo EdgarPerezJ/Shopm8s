@@ -27,22 +27,27 @@
                         <asp:Image ID="imgMainPicture" runat="server" width="400px" Height="400px" CssClass="imgPictureMain"/> 
                     </div>
                 </div>
-                <div class="one_quarter">
-                    <div class="form-group">
-                        <label>Product Name:</label>
-                        <asp:label ID="lblProductName" runat="server"></asp:label>
-                    </div>
-                    <div class="form-group">
-                        <label>Price:</label>
-                        <asp:label ID="lblPrice" runat="server"></asp:label>
-                    </div>
-                    <div class="form-group">
-                        <label>Description:</label>
-                        <asp:label ID="lblDescription" runat="server"></asp:label>
-                    </div>
-                    <asp:Button ID="btnAddCart" runat="server" Text="Add to Cart" CssClass="btn btn-sm btn-default" OnClick="btnAddCart_Click"/>
-                </div>
+                <div class="one_quarter">     
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Product details</div>
+                        <div class="panel-body">                  
+                            <div class="form-group">
+                                <label>Product Name:</label>
+                                <asp:label ID="lblProductName" runat="server"></asp:label>
+                            </div>
+                            <div class="form-group">
+                                <label>Price:</label>
+                                <asp:label ID="lblPrice" runat="server"></asp:label>
+                            </div>
+                            <div class="form-group">
+                                <label>Description:</label>
+                                <asp:label ID="lblDescription" runat="server"></asp:label>
+                            </div>
+                            <asp:Button ID="btnAddCart" runat="server" Text="Add to Cart" CssClass="btn btn-sm btn-default" OnClick="btnAddCart_Click"/>
+                        </div>
+                    </div> 
+                </div>     
             </div>
         </div>
-    </div>
+    </div>         
 </asp:Content>
