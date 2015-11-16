@@ -199,6 +199,32 @@ public class Products:ConnectionString
         }
     }
 
+    public DataTable RetrieveProductInfo()
+    {
+        DataTable ProductInfoDt = new DataTable();
+        SqlConnection conn = new SqlConnection(Connstr);
+        try
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SP_RetrieveProductInfo");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
+            cmd.Parameters.AddWithValue("@Fld_ProductId", _productid);
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            adp.Fill(ProductInfoDt);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+
+        }
+        return ProductInfoDt;
+    }
+
 
 
 }
