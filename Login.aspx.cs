@@ -11,8 +11,22 @@ public partial class Login : System.Web.UI.Page
     DataTable ClientUserInfo = new DataTable();
     protected void Page_Load(object sender, EventArgs e)
     {
+        HttpContext _context = HttpContext.Current;
+        string action = "";
+        if (_context.Items["action"] != null)
+        {
+            action = _context.Items["action"].ToString();
+        }
+        
 
+        if (action.Equals("login"))
+        {
+            Response.Write(_context.Items["name"]);
+            Response.Write(_context.Items["password"]);    
+        }            
     }
+
+
     protected void btnLogin_Click(object sender, EventArgs e)
     {
         Clients clnobj = new Clients();
@@ -29,8 +43,11 @@ public partial class Login : System.Web.UI.Page
             Response.Redirect("Default.aspx");
         }
         else {
-            
-            Server.Transfer("Login.aspx?message=Incorrect password.");            
+            HttpContext _context = HttpContext.Current;
+            _context.Items.Add("name", "Name test");
+            _context.Items.Add("password", "Password test");
+            _context.Items.Add("action", "login");
+            Server.Transfer("Login.aspx");            
         }
     }
 }
