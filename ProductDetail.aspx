@@ -7,9 +7,8 @@
     <div class="wrapper row3">
         <div id="container">
             <div class="full_width clear">
-                <h2>Product detail</h2>
-                <div class="one_quarter first">One Quarter</div>
-                <div class="one_quarter">
+                <h2>Product detail</h2>                
+                <div class="one_quarter first">
                     <div id="pictureOneDiv" style="display: block">
                         <asp:Image ID="imgPictureOne" runat="server" width="50px" Height="50px" /> 
                     </div>
@@ -40,6 +39,7 @@
                     </br>
                     <asp:Button ID="btnAddCart" runat="server" Text="Add to Cart"/>
                 </div>
+                <div class="one_quarter"></div>
             </div>
         </div>
     </div>
