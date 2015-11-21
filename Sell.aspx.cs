@@ -9,16 +9,10 @@ public partial class Sell : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       /* if (!Page.IsPostBack)
+        if (!Page.IsPostBack)
         {
-            if (Session["name"] != null)
-            {
-
-
-                hdnsession.Value = Session["id"].ToString();
-            }
+            divSuccess.Visible = false;
         }
-      */
     }
     protected void btnsave_Click(object sender, EventArgs e)
     {
@@ -69,5 +63,6 @@ public partial class Sell : System.Web.UI.Page
         product._clientid = new Guid(Session["id"].ToString());
         product.SaveProduct();
 
+        divSuccess.Visible = true;
     }
 }

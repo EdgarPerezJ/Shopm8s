@@ -35,7 +35,7 @@
             <div id="container" style="height: 518px;">
                 <div class="full_width clear">
                     <div class="two_quarter first">
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger" role="alert"
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger alert-dismissable" role="alert"
                                 HeaderText="Please correct the following:" />
                     </div>
                     <div class="one_quarter">                                                    

@@ -19,6 +19,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Shopm8s", ".", "{9823B3A5-D
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "58218"
+		VWDVirtualPath = "/"
 	EndProjectSection
 EndProject
 Global
