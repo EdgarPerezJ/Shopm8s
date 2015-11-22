@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/layout.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="../styles/mediaqueries.css" type="text/css" media="all"/>
     <link rel="stylesheet" href="/styles/bootstrap.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/styles/cart.css" type="text/css" media="all"/>
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../scripts/jquery-mobilemenu.min.js"></script>
@@ -27,30 +28,61 @@
     <div class="wrapper row1">
         <header id="header" class="clear">
             <div id="hgroup">
-                <h1><a href="#">SHOPM8S</a></h1>
+                <h1><a href="Default.aspx">SHOPM8S</a></h1>
                 <h2></h2>
             </div>           
             <div class="full_width clear">
                 <div class="one_third first">
                     <div style="display: inline-block; width: 30px;">
-                        <asp:LinkButton id="profileIcon" runat="server" OnClick="profileIcon_Click">
+                        <asp:LinkButton id="profileIcon" runat="server" OnClick="profileIcon_Click" ToolTip="Go to profile">
                             <img src="../styles/images/avatar83.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;" />
                         </asp:LinkButton>
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <asp:LinkButton ID="messagesIcon" runat="server" OnClick="messagesIcon_Click">
+                        <asp:LinkButton ID="messagesIcon" runat="server" OnClick="messagesIcon_Click" ToolTip="Go to messages">
                             <img src="../styles/images/email128.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>
                         </asp:LinkButton>
                     </div>
                     <div style="display: inline-block; width: 30px;">
-                        <asp:LinkButton id="notifIcon" runat="server" OnClick="notifIcon_Click">
+                        <asp:LinkButton id="notifIcon" runat="server" OnClick="notifIcon_Click" ToolTip="Go to notification">
                             <img src="../styles/images/earth213.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>   
                         </asp:LinkButton>
                     </div>
-                    <div style="display: inline-block; width: 30px;">
-                        <asp:LinkButton id="cartIcon" runat="server" OnClick="cartIcon_Click">
-                            <img src="../styles/images/cart10.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>     
-                        </asp:LinkButton>
+                    <div style="display: inline-block; width: 30px;"> 
+                            <li class="dropdown">                             
+                                <asp:LinkButton class="dropdown-toggle" data-toggle="dropdown" id="cartIcon" runat="server" OnClick="cartIcon_Click" ToolTip="Go to cart">
+                                    <img src="../styles/images/cart10.png" style="width: 20px; height: 20px; display: inline-block; cursor: pointer;"/>     
+                                </asp:LinkButton>
+                                <ul class="dropdown-menu dropdown-cart" role="menu">
+                                    <li> 
+                                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                                            <ContentTemplate>
+                                                <asp:Repeater ID="RepeaterMaster" runat="server"  OnItemCommand="RepeaterMaster_ItemCommand">
+                                                    <ItemTemplate>
+                                                        <span class="item">
+                                                            <span class="item-left">
+                                                                <asp:ImageButton  ID="productimg" runat="server" ImageUrl='<%# Eval("photo1") %>' data-holder-rendered="true" style="height: 50px; width: 50px; display: block;" OnCommand="Image_Click"  CommandName="ImageClick" CommandArgument='<%# Eval("productid") %>' />
+                                                                <span class="item-info">
+                                                                    <asp:Label ID="namelbl" runat="server" Text='<%# Eval("name") %>' ></asp:Label>
+                                                                    <asp:Label ID="pricelbl" runat="server" Text='<%# Eval("price") %>' ></asp:Label>
+                                                                </span>
+                                                            </span>
+                                                            <span class="item-right">
+                                                                <asp:LinkButton ID="LinkButton1" CommandName="DeleteCart"  runat="server"  CssClass="btn btn-xs btn-danger pull-right" CommandArgument='<%# Eval("cartid") %>'  >x</asp:LinkButton>
+                                                            </span>
+                                                        </span>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                                <asp:HiddenField ID="hdcartid" runat="server" />
+                                                <asp:HiddenField ID="hfProductID" runat="server" />
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
+                                  </li>
+                                  <li class="divider"></li>
+                                  <li><a class="text-center" href="">View Cart</a></li>
+                              </ul>
+                            </li>
                     </div>                     
                 </div>
                 <div class="one_third">&nbsp;</div>
@@ -62,33 +94,28 @@
                          
                      </div>
                     <div runat="server" id="logoutdiv" style="display: inline-block;">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
-                            <asp:LinkButton ID="logoutlnk" runat="server" OnClick="logoutlnk_Click">Logout</asp:LinkButton>
-                        </ContentTemplate>
-
-                    </asp:UpdatePanel>
-                    
-                        </div>
-                               
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:LinkButton ID="logoutlnk" runat="server" OnClick="logoutlnk_Click">Logout</asp:LinkButton>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>    
+                </div>
             </div>
-            </div>
-
         </header>
     </div>
 
     <div class="wrapper row2">
         <nav id="topnav">
             <ul class="clear">
-                <li class="active first"><a href="index.html">Home</a></li>
-                <li><a href="#">Women</a></li>
-                <li><a href="#">Men</a></li>
-                <li><a href="#">Baby & Kids</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Electronics</a></li>
+                <li class="active first"><a href="Default.aspx">Main</a></li>
+                <li><asp:LinkButton ID="lnkWomen" runat="server" OnClick="lnkWomen_Click">Women</asp:LinkButton></li>
+                <li><asp:LinkButton ID="lnkMen" runat="server" OnClick="lnkMen_Click">Men</asp:LinkButton></li>
+                <li><asp:LinkButton ID="lnkBaby" runat="server" OnClick="lnkBaby_Click">Baby & Kids</asp:LinkButton></li>
+                <li><asp:LinkButton ID="lnkHome" runat="server" OnClick="lnkHome_Click">Home</asp:LinkButton></li>
+                <li><asp:LinkButton ID="lnkElectronics" runat="server" OnClick="lnkElectronics_Click">Electronics</asp:LinkButton></li>
                 <li><a href="/Sell.aspx">Sell</a></li>
-            </ul>
+            </ul>            
         </nav>
     </div>
     

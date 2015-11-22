@@ -16,8 +16,7 @@ public partial class Login : System.Web.UI.Page
         if (_context.Items["action"] != null)
         {
             action = _context.Items["action"].ToString();
-        }
-        
+        }        
 
         if (action.Equals("login"))
         {
@@ -49,5 +48,10 @@ public partial class Login : System.Web.UI.Page
             _context.Items.Add("action", "login");
             Server.Transfer("Login.aspx");            
         }
+    }
+
+    protected void btnRegister_Click(object sender, EventArgs e)
+    {
+        Server.Transfer("Signup.aspx");
     }
 }

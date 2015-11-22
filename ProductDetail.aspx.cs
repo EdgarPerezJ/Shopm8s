@@ -8,37 +8,58 @@ using System.Web.UI.WebControls;
 
 public partial class ProductDetail : System.Web.UI.Page
 {
-    DataTable ProductInfoDt = new DataTable();
+    DataTable productInfoDt = new DataTable();
+    DataTable cartInfoDt = new DataTable();
+
     protected void Page_Load(object sender, EventArgs e)
     {
+        divSuccess.Visible = false;
+        divError.Visible = false;
         if (!Page.IsPostBack) {
-
-            Products product = new Products();
-            string productid="773237a8-26a3-4a68-a8ec-1a72be86b0ed";
-            product._productid = new Guid(productid);
-            ProductInfoDt = product.RetrieveProductInfo();
-            lblProductName.Text = ProductInfoDt.Rows[0]["name"].ToString();
-            lblPrice.Text = ProductInfoDt.Rows[0]["price"].ToString();
-            lblDescription.Text = ProductInfoDt.Rows[0]["description"].ToString();
-            imgMainPicture.ImageUrl = ProductInfoDt.Rows[0]["photo1"].ToString();
-            imgPictureOne.ImageUrl = ProductInfoDt.Rows[0]["photo1"].ToString();
-            imgPictureTwo.ImageUrl = ProductInfoDt.Rows[0]["photo2"].ToString();
-            imgPictureThree.ImageUrl = ProductInfoDt.Rows[0]["photo3"].ToString();
-            imgPictureFour.ImageUrl = ProductInfoDt.Rows[0]["photo4"].ToString();
-
-        
+            Products product = new Products();            
+            product._productid = new Guid(Request.QueryString.Get("ProductID").ToString());
+            productInfoDt = product.RetrieveProductInfo();
+            lblProductName.Text = productInfoDt.Rows[0]["name"].ToString();
+            lblPrice.Text = productInfoDt.Rows[0]["price"].ToString();
+            lblDescription.Text = productInfoDt.Rows[0]["description"].ToString();
+            imgMainPicture.ImageUrl = productInfoDt.Rows[0]["photo1"].ToString();
+            imgPictureOne.ImageUrl = productInfoDt.Rows[0]["photo1"].ToString();
+            imgPictureTwo.ImageUrl = productInfoDt.Rows[0]["photo2"].ToString();
+            imgPictureThree.ImageUrl = productInfoDt.Rows[0]["photo3"].ToString();
+            imgPictureFour.ImageUrl = productInfoDt.Rows[0]["photo4"].ToString();        
         }
     }
     
     protected void btnAddCart_Click(object sender, EventArgs e)
     {
-        string productid = "773237a8-26a3-4a68-a8ec-1a72be86b0ed";
+        //Validate the session
+        if (Session["id"] == null || Session["id"].Equals(""))
+        {
+            Server.Transfer("/Login.aspx");    
+        }
+
+        string productid = Request.QueryString.Get("ProductID").ToString();
         Carts cart = new Carts();
         cart._cartid = Guid.NewGuid();
         cart._clientid = new Guid(Session["id"].ToString());
         cart._productid = new Guid(productid);
-        cart.SaveCart();
-        btnAddCart.Enabled = false;
-        btnAddCart.Text = "Added";
+
+        //Validates if the product was already added to the cart
+        cartInfoDt = cart.RetrieveCartByClientProduct();
+        if (cartInfoDt.Rows.Count >  0)
+        {
+            divSuccess.Visible = false;
+            divError.Visible = true;    
+        }
+        else{
+            cart.SaveCart();
+            btnAddCart.Enabled = false;
+            btnAddCart.Text = "Added";
+            var MasterRepeater = (Repeater)Master.FindControl("RepeaterMaster");
+            MasterRepeater.DataSource = cart.RetrieveCarts();
+            MasterRepeater.DataBind();
+            divSuccess.Visible = true;
+            divError.Visible = false; 
+        }        
     }
 }

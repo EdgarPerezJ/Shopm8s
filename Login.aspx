@@ -26,7 +26,7 @@
         <div class="wrapper row1">
             <header id="header" class="clear">
                 <div id="hgroup">
-                    <h1><a href="#">SHOPM8S</a></h1>
+                    <h1><a href="Default.aspx">SHOPM8S</a></h1>
                     <h2>&nbsp;</h2>
                 </div>
             </header>
@@ -35,7 +35,7 @@
             <div id="container" style="height: 518px;">
                 <div class="full_width clear">
                     <div class="two_quarter first">
-                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" CssClass="alert alert-danger alert-dismissable" role="alert"
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="valGroupLogin" CssClass="alert alert-danger alert-dismissable" role="alert"
                                 HeaderText="Please correct the following:" />
                     </div>
                     <div class="one_quarter">                                                    
@@ -47,7 +47,7 @@
                     <div class="one_quarter first">
                         <label>Email</label>
                         <asp:TextBox ID="emailtxt" CssClass="form-control" runat="server" TextMode="Email"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" Text="<img src='./styles/images/Exclamation.gif' title='Please supply your Email' />" runat="server" ControlToValidate="emailtxt" ErrorMessage="Please supply your Email"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ValidationGroup="valGroupLogin" Text="<img src='./styles/images/Exclamation.gif' title='Please supply your Email' />" runat="server" ControlToValidate="emailtxt" ErrorMessage="Please supply your Email"></asp:RequiredFieldValidator>
                     </div>
                     <div class="one_quarter">                        
                     </div>
@@ -60,7 +60,7 @@
                     <div class="one_quarter first">
                         <label>Password</label>
                         <asp:TextBox ID="passwordtxt" CssClass="form-control" runat="server" TextMode="Password"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="passwordtxt" Text="<img src='./styles/images/Exclamation.gif' title='Please supply your Password' />" ErrorMessage="Please supply your password"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ValidationGroup="valGroupLogin" runat="server" ControlToValidate="passwordtxt" Text="<img src='./styles/images/Exclamation.gif' title='Please supply your Password' />" ErrorMessage="Please supply your password"></asp:RequiredFieldValidator>
                     </div>
                     <div class="one_quarter">                        
                     </div>
@@ -72,7 +72,8 @@
 
                 <div class="full_width clear">
                     <div class="one_quarter first">
-                        <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" CssClass="btn btn-sm btn-default" />
+                        <asp:Button ID="btnLogin" runat="server" Text="Login" ValidationGroup="valGroupLogin" OnClick="btnLogin_Click" CssClass="btn btn-sm btn-default" />
+                        <asp:Button ID="btnRegister" runat="server" Text="Register" CssClass="btn btn-sm btn-default" OnClick="btnRegister_Click" />
                     </div>
                     <div class="one_quarter">                        
                     </div>

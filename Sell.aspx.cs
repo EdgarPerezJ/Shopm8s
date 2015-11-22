@@ -12,6 +12,11 @@ public partial class Sell : System.Web.UI.Page
         if (!Page.IsPostBack)
         {
             divSuccess.Visible = false;
+            //validate the Session
+            if (Session["id"] == null || Session["id"].Equals(""))
+            {
+                Server.Transfer("/Login.aspx");
+            }
         }
     }
     protected void btnsave_Click(object sender, EventArgs e)

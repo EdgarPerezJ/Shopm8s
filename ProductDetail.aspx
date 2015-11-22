@@ -7,6 +7,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="wrapper row3">
         <div id="container">
+            <div class="full_width clear"> 
+                <asp:panel ID="divSuccess" runat="server" CssClass="alert alert-success alert-dismissable">
+                    The product was added to your cart
+                </asp:panel> 
+                <asp:panel ID="divError" runat="server" CssClass="alert alert-danger alert-dismissable">
+                    You already have this product
+                </asp:panel> 
+            </div>
             <div class="full_width clear">              
                 <div class="one_quarter first">
                     <div id="pictureOneDiv" style="display: block; cursor: pointer;" class="thumbnail">	
@@ -46,7 +54,7 @@
                             <asp:Button ID="btnAddCart" runat="server" Text="Add to Cart" CssClass="btn btn-sm btn-default" OnClick="btnAddCart_Click"/>
                         </div>
                     </div> 
-                </div>     
+                </div>  
             </div>
         </div>
     </div>         
