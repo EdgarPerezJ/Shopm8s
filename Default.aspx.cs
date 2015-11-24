@@ -14,9 +14,17 @@ public partial class _Default : System.Web.UI.Page
     {
         divSuccess.Visible = false;
         divError.Visible = false;
-        string type = Request.Params.Get("type");
         Products products = new Products();
-        if (type != null && type != "")
+        //Validates if it has a name parameter to filter the products
+        string name = Request.Params.Get("name");
+        string type = Request.Params.Get("type");
+        if (name != null && name != "")
+        {
+            products._name = name;
+            Repeater1.DataSource = products.RetrieveProductsByName();
+        }
+        //Validates if it has a type parameter 
+        else if (type != null && type != "")
         {
             products._type = type;
             Repeater1.DataSource = products.RetrieveProductsByType();
@@ -73,5 +81,20 @@ public partial class _Default : System.Web.UI.Page
         {
             Server.Transfer(string.Format("ProductDetail.aspx?ProductID={0}", hfProductID.Value));
         }
+    }
+
+    [System.Web.Services.WebMethod]
+    public static List<Products> GetAllProduct(string query)
+    {
+        DataTable productsDT = new DataTable();
+        List<Products> list = new List<Products>();
+        Products prod = new Products();
+        productsDT = prod.RetrieveAllProductsDistinct();
+        foreach(DataRow row in productsDT.Rows){
+            Products product = new Products();
+            product._name = row["name"].ToString();
+            list.Add(product);
+        }
+        return list;
     }
 }

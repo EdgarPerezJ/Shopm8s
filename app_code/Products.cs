@@ -276,4 +276,81 @@ public class Products:ConnectionString
         return ProductsbytypeDt;
     }
 
+    public DataTable RetrieveProductsByName()
+    {
+        DataTable ProductsbytypeDt = new DataTable();
+        SqlConnection conn = new SqlConnection(Connstr);
+        try
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SP_RetrieveProductsByName");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
+            cmd.Parameters.AddWithValue("@Fld_Name", _name);
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            adp.Fill(ProductsbytypeDt);
+        }
+        catch (SqlException ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            
+        }
+        return ProductsbytypeDt;
+    }
+
+    public DataTable RetrieveAllProductsDistinct()
+    {
+        DataTable ProductsDt = new DataTable();
+        SqlConnection conn = new SqlConnection(Connstr);
+        try
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SP_RetrieveAllProductsDistint");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            adp.Fill(ProductsDt);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+
+        }
+        return ProductsDt;
+    }
+
+    public DataTable RetrieveProductsBySeller()
+    {
+        DataTable ProductsbysellerDt = new DataTable();
+        SqlConnection conn = new SqlConnection(Connstr);
+        try
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SP_RetrieveProductsBySeller");
+            cmd.Parameters.AddWithValue("@fld_clientid", _clientid);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+            SqlDataAdapter adp = new SqlDataAdapter(cmd);
+            adp.Fill(ProductsbysellerDt);
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+
+        }
+        return ProductsbysellerDt;
+    }
+
 }

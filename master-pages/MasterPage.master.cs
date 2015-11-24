@@ -111,7 +111,7 @@ public partial class master_pages_MasterPage : System.Web.UI.MasterPage
         hfProductID.Value = e.CommandArgument.ToString();
         if (e.CommandName == "ImageClick")
         {
-            Server.Transfer(string.Format("ProductDetail.aspx?ProductID={0}", hfProductID.Value));
+            Response.Redirect(string.Format("ProductBidPage.aspx?ProductID={0}", hfProductID.Value));
         }
     }
 

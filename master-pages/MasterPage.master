@@ -14,6 +14,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="../scripts/jquery-mobilemenu.min.js"></script>
     <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/bootstrap-typeahead.js"></script>
+    <script src="../scripts/modules/ProductSearch.js"></script>
     <!--[if lt IE 9]>
         <link rel="stylesheet" href="styles/ie.css" type="text/css" media="all">
         <script src="scripts/ie/css3-mediaqueries.min.js"></script>
@@ -86,13 +88,11 @@
                     </div>                     
                 </div>
                 <div class="one_third">&nbsp;</div>
-                <div class="one_third">                    
-                     <input type="text" style="width: 50%" />
-                     <input type="button" value="Search" />
-                     <div runat="server" id="loginlinks" style="display: inline-block; ">
+                <div class="one_third">                   
+                    <input id="txtProductSearch" type="text" class="form-control input-sm" placeholder="Search products..." autocomplete="off"/>
+                    <div runat="server" id="loginlinks" style="display: inline-block; ">
                         <asp:LinkButton runat="server" href="/Login.aspx">Login</asp:LinkButton>/<asp:LinkButton runat="server" href="/Signup.aspx">Register</asp:LinkButton>
-                         
-                     </div>
+                    </div>
                     <div runat="server" id="logoutdiv" style="display: inline-block;">
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
@@ -114,7 +114,7 @@
                 <li><asp:LinkButton ID="lnkBaby" runat="server" OnClick="lnkBaby_Click">Baby & Kids</asp:LinkButton></li>
                 <li><asp:LinkButton ID="lnkHome" runat="server" OnClick="lnkHome_Click">Home</asp:LinkButton></li>
                 <li><asp:LinkButton ID="lnkElectronics" runat="server" OnClick="lnkElectronics_Click">Electronics</asp:LinkButton></li>
-                <li><a href="/Sell.aspx">Sell</a></li>
+                <li><a href="/MyProducts.aspx">Sell</a></li>
             </ul>            
         </nav>
     </div>
